@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}{{ super() }}{% if dates_page and dates_page.number > 1 %} - Page {{ dates_page.number }}{% endif %}{% endblock %}
+{% block meta_other %}
+{% include "includes/" + CUSTOM_INDEX_META|default("index_meta.html") ignore missing %}
+{% endblock %}
+
+{% block content_body %}
+{# {% block article %} #}
+
+
+
+
+<div id="accordion">
+{% for article in (dates_page.object_list if dates_page else articles) %}
+
+    {% include "includes/article_header.html" %}
+    <div class="content-body">
+        {{ article.content }}
+    </div>
+
+{% endfor %}
+</div>
+
+{# {% endblock article %} #}
+<div id="accordionPaginator"> <a href="#" class="previousPage">Previous Page</a>
+
+    <select name="goToPage" class="goToPage" size="1"></select> <a href="#" class="nextPage">Next Page</a>
+
+</div>
+
+
+
+{% endblock content_body %}

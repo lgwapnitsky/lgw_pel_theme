@@ -1,0 +1,22 @@
+#titlebar {
+    width: 100%;
+}
+
+#titlebar td {
+    overflow:hidden;
+    display: table-cell;
+}
+
+#titlebar td.title {
+    font-weight: bold;
+    text-align: left;
+    width: 50%;
+    min-width: 50%;
+    max-width: 50%;
+
+}
+
+#titlebar td.date, td.category {
+    text-align: left;
+    min-width: 25%;
+}

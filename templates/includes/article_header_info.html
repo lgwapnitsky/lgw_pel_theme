@@ -1,0 +1,23 @@
+<div class="article-header-info">
+
+    {% if article.author %}
+<!--    {% if article.author_gravatar %}
+    <img src="{{ article.author_gravatar }}">
+    {% endif %}
+
+    <a href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+    {% endif %}
+-->
+    in
+    <a href="{{ SITEURL }}/{{ article.category.url }}">
+      {{ article.category }}</a>
+    &nbsp;&nbsp;
+    {% if PDF_PROCESSOR %}
+    <span class="label">
+      <a href="{{ SITEURL }}/pdf/{{ article.slug }}.pdf">PDF</a>
+    </span>
+    &nbsp;&nbsp;
+    {% endif %}
+
+
+</div> <!-- /.article-header-info -->
